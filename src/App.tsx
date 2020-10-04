@@ -24,7 +24,7 @@ const App: FunctionComponent = () => {
       const response: { data:  PostItemType[] } = await axios.get(`${process.env.REACT_APP_ENDPOINT}/posts`);
       setPostItems(response.data);
     } catch (e) {
-      alert(e.response.data.message);
+      alert(e?.response?.data?.message);
     }
   }
 
@@ -45,7 +45,7 @@ const App: FunctionComponent = () => {
       cookies.set('username', response.data.username, { expires: 7 });
       setIsAuth(true);
     } catch (e) {
-      alert(e.response.data.message);
+      alert(e?.response?.data?.message);
     }
   }
 
@@ -58,7 +58,7 @@ const App: FunctionComponent = () => {
 
       alert('User created, you can try loging in.');
     } catch (e) {
-      alert(e.response.data.message);
+      alert(e?.response?.data?.message);
     }
   }
 
@@ -74,7 +74,7 @@ const App: FunctionComponent = () => {
       await axios.delete(`${process.env.REACT_APP_ENDPOINT}/posts/${_id}`);
       fetchPostItem();
     } catch (e) {
-      alert(e.response.data.message);
+      alert(e?.response?.data?.message);
     }
   }
 
@@ -83,7 +83,7 @@ const App: FunctionComponent = () => {
       await axios.post(`${process.env.REACT_APP_ENDPOINT}/posts`, draftPost);
       fetchPostItem();
     } catch (e) {
-      alert(e.response.data.message);
+      alert(e?.response?.data?.message);
     }
   }
 
@@ -92,7 +92,7 @@ const App: FunctionComponent = () => {
       await axios.put(`${process.env.REACT_APP_ENDPOINT}/posts/${_id}`, draftPost);
       fetchPostItem();
     } catch (e) {
-      alert(e.response.data.message);
+      alert(e?.response?.data?.message);
     }
   }
 

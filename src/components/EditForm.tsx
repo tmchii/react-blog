@@ -28,7 +28,7 @@ const EditForm: FunctionComponent<IEditFormProps> = (props) => {
       const response: { data: Category[] } = await axios.get(`${process.env.REACT_APP_ENDPOINT}/categories`);
       setCategories(response.data);
     } catch (e) {
-      alert(e.response.data.message);
+      alert(e?.response?.data?.message);
     }
   }
 

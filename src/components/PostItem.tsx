@@ -73,8 +73,10 @@ const PostItem: FunctionComponent<IPostItemProps> = (props) =>  {
         <CardContent>
           <Box display="flex" justifyContent="space-between">
             <Typography className={classes.title} color="textSecondary" gutterBottom>
-              <span> Category: {props.category.name}</span>
-              <span>Status: {props.status}</span>
+              Category: {props.category.name}
+            </Typography>
+            <Typography className={classes.title} color="textSecondary" gutterBottom>
+              Status: {props.status}
             </Typography>
           </Box>
           <Typography variant="h5" component="h2">
